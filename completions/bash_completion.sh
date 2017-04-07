@@ -117,5 +117,4 @@ _complete_alias () {
 # All of them should have `_complete_alias` as the completion function.
 #
 #complete -F _complete_alias myalias1
-#complete -F _complete_alias myalias2
-#complete -F _complete_alias myalias3
+complete -F _complete_alias $(alias | cut -f2 -d\ | cut -f1 -d= | tr "\n\r" " ")
